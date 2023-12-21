@@ -1,0 +1,129 @@
+.headder{
+  width: 100vw;
+  height: 8rem;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo{
+  width: 15rem;
+
+}
+
+.headBody{
+  margin-left: 10rem;
+  margin-right: 10rem;
+  margin-top: 15rem;
+}
+
+.headBody h1{
+  color: #1a1a1a;
+}
+
+.underBox{
+  width: 7rem;
+  height: 1rem;
+  background-color: #1a1a1a;
+  margin: 1rem 0 1.5rem ;
+  
+}
+
+.headBody p{
+  font-size: 1.3rem;
+}
+
+.filterBox{
+  border: 0.2rem solid rgba(0, 0, 0, 0.2);
+  width: 80%;
+  border-radius: 0.35rem;
+  padding: 1.2rem;
+  margin: 0 auto;
+}
+
+.hourTitle{
+  display: flex;
+  align-items: center;
+}
+
+.hourTitle img{
+  width: 3.5rem;
+}
+
+.hourTitle span{
+  margin-left: 1rem;
+}
+
+.filterBox h2{
+  font-style: normal;
+  font-size: 2.5rem;
+  margin-left: 1rem;
+}
+
+.optionLine p{
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.optionLine p span{
+  position: absolute;
+  right: 0;
+}
+
+input[type=radio], input[type=checkbox] {
+  border: 0px;
+  width: 1.5rem;
+  height: 2rem;
+
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.buttonFind, .buttonClear{
+  width: 25rem;
+  font-size: 1.2rem;
+  border: 1px solid #1a1a1a;
+  border-radius: 0.3rem;
+}
+
+.buttonFind{
+  background-color: #ffbb00;
+}
+
+.legendBox{
+  width: 83%;
+  background-color: rgba(0, 0, 0, 0.048);
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+.card{
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.imageCard img{
+  width: 5rem;
+}
+
+.row{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 2rem;
+}
