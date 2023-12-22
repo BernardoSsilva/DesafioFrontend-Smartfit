@@ -139,7 +139,6 @@ input[type=radio], input[type=checkbox] {
   width: 87%;
   justify-content: center;
   margin: 2rem auto;
-  border: 1px solid red;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
@@ -151,7 +150,10 @@ input[type=radio], input[type=checkbox] {
 
 .resultCard{
   width: 20rem;
-  padding: 2rem;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
   background-color: rgba(0, 0, 0, 0.048);
 }
 
@@ -159,5 +161,43 @@ input[type=radio], input[type=checkbox] {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  margin-right: 2rem;
+}
+
+.schedulesItem{
+
+}
+
+.resultCardImages{
+  display: flex;
+  flex-direction: row;
+}
+
+.resultCardCell img{
+  width: 5rem;
+}
+
+.conteudoTxt{
+  font-size: 1.3rem;
+}
+
+.schedulesItem p{
+  font-size: 1.3rem;
+}
+.schedulesItem h3{
+  font-size: 1.8rem;
+}
+
+.aberto{
+  color: lime;
+  font-size: 1.4rem;
+}
+
+.fechado{
+  font-size: 1.4rem;
+  color: red;
+}
+
+.resultCard h2{
+  margin-top: -1rem;
 }
