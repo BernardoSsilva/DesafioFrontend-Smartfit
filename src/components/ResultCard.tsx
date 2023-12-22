@@ -17,7 +17,7 @@ export default function ResultCard(props: { item: { id: boolean | Key | ReactEle
 
     return (
         <div>
-            <div className="resultCard" key={props.item.id}>
+            <div className="resultCard" key={String(props.item.id)}>
                 {props.item.opened ? (
                     <p className="aberto"><strong>Aberto</strong></p>
                 ) : (

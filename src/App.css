@@ -135,7 +135,7 @@ input[type=radio], input[type=checkbox] {
 
 .resultRow{
   display: flex;
-
+  text-align: center;
   width: 87%;
   justify-content: center;
   margin: 2rem auto;
@@ -154,6 +154,7 @@ input[type=radio], input[type=checkbox] {
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 4px 4px rgba(0, 0, 0, 0.05);
   border-radius: 1rem;
+  margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.048);
 }
 
@@ -162,10 +163,6 @@ input[type=radio], input[type=checkbox] {
   justify-content: space-between;
   flex-wrap: wrap;
   margin-right: 2rem;
-}
-
-.schedulesItem{
-
 }
 
 .resultCardImages{

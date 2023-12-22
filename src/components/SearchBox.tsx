@@ -8,9 +8,9 @@ export default function SearchBox(props: { search: () => void; results: string |
         const selectedPeriod = form.period.value;
         
         if (selectedPeriod === "") {
-            props.search(undefined);
+            props.search();
         } else {
-            props.search(selectedPeriod);
+            props.search();
         }
     }
     return (

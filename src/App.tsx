@@ -9,16 +9,14 @@ import ResultCard from './components/ResultCard';
 function App() {
   const [value, setValue] = useState(0);
   const refResults = useRef(null);
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState<any[]>([]);
   const cards: any[] = [];
 
 
-  function search(filterVal:any) {
+  function search() {
     
     axios.get("https://test-frontend-developer.s3.amazonaws.com/data/locations.json")
       .then((response) => {
-        const filter = filterVal
-        console.log(filter)
         const data = response.data;
         const total = response.data.total;
         for (let i = 0; i < total; i++) {
@@ -35,7 +33,7 @@ function App() {
   }
 
   function clear(event:any) {
-    window.location.reload(false);
+    window.location.reload();
   }
 
   return (
@@ -48,7 +46,6 @@ function App() {
           results.map((item, index) => (
             <ResultCard item={item} />
           ))
-          // <h1>Alguma coisa tem dentro dessa merda</h1>
         ) : (
           <p>Nenhum resultado encontrado.</p>
         )}
