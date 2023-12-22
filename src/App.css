@@ -1,3 +1,7 @@
+*{
+  max-width: 100vw;
+}
+
 .headder{
   width: 100vw;
   height: 8rem;
@@ -97,6 +101,7 @@ input[type=radio], input[type=checkbox] {
 
 .buttonFind{
   background-color: #ffbb00;
+  cursor: pointer;
 }
 
 .legendBox{
@@ -126,4 +131,33 @@ input[type=radio], input[type=checkbox] {
   justify-content: center;
   display: flex;
   gap: 2rem;
+}
+
+.resultRow{
+  display: flex;
+
+  width: 87%;
+  justify-content: center;
+  margin: 2rem auto;
+  border: 1px solid red;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.resultRow > * {
+  flex-basis: calc(33.3% - 1.5rem); 
+  max-width: calc(33.3% - 1.5rem); /
+}
+
+.resultCard{
+  width: 20rem;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.048);
+}
+
+.schedules{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }

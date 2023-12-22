@@ -1,8 +1,21 @@
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, MouseEventHandler } from "react"
 import iconhour from "../assets/iconhour.png"
-export default function SearchBox(props: { results: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; function: MouseEventHandler<HTMLButtonElement> | undefined; function2: MouseEventHandler<HTMLButtonElement> | undefined }){
+export default function SearchBox(props: { search: () => void; results: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; function2: MouseEventHandler<HTMLButtonElement> | undefined; }){
+    
+    function handleForm(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const selectedPeriod = form.period.value;
+        
+        if (selectedPeriod === "") {
+            props.search(undefined);
+        } else {
+            props.search(selectedPeriod);
+        }
+    }
     return (
         <>
+        <form onSubmit={handleForm}>
             <div className="filterBox">
                 <p className="hourTitle">
                     <img src={iconhour} alt="" />
@@ -17,7 +30,7 @@ export default function SearchBox(props: { results: string | number | boolean | 
                 <hr />
                 <div className="optionLine">
                     <p>
-                        <input type="radio" name="periodo" id="1" />
+                        <input type="radio" name="period" id="1" value="manha"/> 
                         Manhã
                         <span>
                             06:00 às 12:00
@@ -29,7 +42,7 @@ export default function SearchBox(props: { results: string | number | boolean | 
 
                 <div className="optionLine">
                     <p>
-                        <input type="radio" name="periodo" id="2" />
+                        <input type="radio" name="period" id="2" value="tarde"/>
                            Tarde
                         <span>
                             12:01 às 18:00
@@ -41,7 +54,7 @@ export default function SearchBox(props: { results: string | number | boolean | 
 
                 <div className="optionLine">
                     <p>
-                        <input type="radio" name="periodo" id="3" />
+                        <input type="radio" name="period" id="3" value="noite"/>
                         Noite
 
                         <span>
@@ -62,15 +75,17 @@ export default function SearchBox(props: { results: string | number | boolean | 
                 </div>
 
                 <div className="buttons">
-                    <button className="buttonFind" onClick={props.function}>
-                        Encontrar Unidade
-                    </button>
+                    <input type="submit" value="Encontrar Unidade" className="buttonFind"/>
+                    {/* <button className="buttonFind" onClick={props.search}>
+                    Encontrar Unidade
+                    </button> */}
 
                     <button className="buttonClear" onClick={props.function2}>
                         Limpar
                     </button>
                 </div>
             </div>
+            </form>
         </>
     )
 }
