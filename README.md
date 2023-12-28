@@ -1,8 +1,5 @@
 # Desafio Frontend - Smart Fit
 
-<img src="(https://github.com/BernardoSsilva/DesafioFrontend-Smartfit/blob/main/src/assets/logo.svg" alt="SmartFit" />
-
-
 Este repositório contém a solução para o desafio de [Front-end da Smart Fit](https://github.com/bioritmo/front-end-code-challenge-smartsite/tree/master) foi utilizada a biblioteca react em junção com o vite para o desenvolvimento da solução
 
 ## 📖 Sobre o desafio
