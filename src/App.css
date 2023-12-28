@@ -209,6 +209,21 @@ input[type=radio], input[type=checkbox] {
   margin-top: -1rem;
 }
 
+.footer{
+  max-width: 100%;
+  background-color: #343434;
+  display:  flex;
+  justify-content: center;
+  padding: 2rem;
+  align-items: center; 
+  color: white;
+}
+
+.footerImage img{
+  width: 10rem;
+  margin-top: 1rem;
+}
+
 @media(max-width: 600px){
   *{
     max-width: 100%;

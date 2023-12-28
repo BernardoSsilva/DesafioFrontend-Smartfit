@@ -1,16 +1,21 @@
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, MouseEventHandler } from "react"
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, MouseEventHandler, useState } from "react"
 import iconhour from "../assets/iconhour.png"
-export default function SearchBox(props: { search: () => void; results: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; function2: MouseEventHandler<HTMLButtonElement> | undefined; }){
+export default function SearchBox(props: { search: (arg0: string, arg1: boolean) => void; results: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; function2: MouseEventHandler<HTMLButtonElement> | undefined; }){
+    
+    const [selectedPeriod, setSelectedPeriod] = useState<string>("");
     
     function handleForm(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const form = event.currentTarget;
         const selectedPeriod = form.period.value;
+        const fechado = form.fechado.checked;
         
         if (selectedPeriod === "") {
-            props.search();
+            props.search("all", fechado);
+            console.log("all")
         } else {
-            props.search();
+            props.search(selectedPeriod, fechado);
+            console.log(selectedPeriod);
         }
     }
     return (
@@ -30,7 +35,13 @@ export default function SearchBox(props: { search: () => void; results: string |
                 <hr />
                 <div className="optionLine">
                     <p>
-                        <input type="radio" name="period" id="1" value="manha"/> 
+                        <input 
+                        type="radio"
+                        name="period"
+                        value="manha"
+                        checked={selectedPeriod === "manha"}
+                        onChange={() => setSelectedPeriod("manha")}
+                        /> 
                         Manhã
                         <span>
                             06:00 às 12:00
@@ -42,7 +53,13 @@ export default function SearchBox(props: { search: () => void; results: string |
 
                 <div className="optionLine">
                     <p>
-                        <input type="radio" name="period" id="2" value="tarde"/>
+                        <input 
+                        type="radio"
+                        name="period"
+                        value="tarde"
+                        checked={selectedPeriod === "tarde"}
+                        onChange={() => setSelectedPeriod("tarde")}
+                        />
                            Tarde
                         <span>
                             12:01 às 18:00
@@ -54,7 +71,13 @@ export default function SearchBox(props: { search: () => void; results: string |
 
                 <div className="optionLine">
                     <p>
-                        <input type="radio" name="period" id="3" value="noite"/>
+                        <input 
+                             type="radio"
+                             name="period"
+                             value="noite"
+                             checked={selectedPeriod === "noite"}
+                             onChange={() => setSelectedPeriod("noite")}
+                             />
                         Noite
 
                         <span>
@@ -66,7 +89,7 @@ export default function SearchBox(props: { search: () => void; results: string |
 
                 <div className="optionLine">
                     <p>
-                        <input type="checkbox" name="fech" id="" />
+                        <input type="checkbox" name="fech" id="fechado" />
                         Exibir unidades fechadas
                         <span>
                             Resultados encontrados:<strong>{props.results}</strong>
