@@ -242,6 +242,11 @@ input[type=radio], input[type=checkbox] {
 
   }
 
+  .row{
+    display: flex;
+    flex-direction: column;
+  }
+
 
   .resultCard{
     width: 90%;
