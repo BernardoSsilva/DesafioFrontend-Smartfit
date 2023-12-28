@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import axios from "axios";
 import "./App.css";
 import Header from "./components/Header";
@@ -8,7 +8,6 @@ import ResultCard from "./components/ResultCard";
 
 function App() {
   const [value, setValue] = useState(0);
-  const refResults = useRef(null);
   const [results, setResults] = useState<any[]>([]);
   const cards: any[] = [];
 
@@ -32,7 +31,7 @@ function App() {
       });
   }
 
-  function clear(event: any) {
+  function clear() {
     window.location.reload();
   }
 
@@ -44,7 +43,7 @@ function App() {
         <Legend />
         <div className="resultRow">
           {value > 0 ? (
-            results.map((item, index) => <ResultCard item={item} />)
+            results.map((item) => <ResultCard item={item} />)
           ) : (
             <p>Nenhum resultado encontrado.</p>
           )}
