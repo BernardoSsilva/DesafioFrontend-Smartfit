@@ -277,4 +277,13 @@ input[type=radio], input[type=checkbox] {
     flex-basis: calc(90% - 1.5rem); 
     max-width: calc(90% - 1.5rem); /
   }
+
+  .buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .buttonFind{
+    padding: 1rem;
+  }
 }
