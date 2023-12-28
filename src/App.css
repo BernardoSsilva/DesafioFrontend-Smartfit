@@ -2,8 +2,18 @@
   max-width: 100vw;
 }
 
+.mainBody{
+  background-color: white;
+  width: 100%;
+  min-height: 100%;
+  color: black;
+  margin: 0;
+  position: absolute;
+  top: 0;
+}
+
 .headder{
-  width: 100vw;
+  width: 100%;
   height: 8rem;
   background-color: black;
   position: absolute;
@@ -197,4 +207,54 @@ input[type=radio], input[type=checkbox] {
 
 .resultCard h2{
   margin-top: -1rem;
+}
+
+@media(max-width: 600px){
+  *{
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .headBody{
+    margin-left: 2rem;
+    width: 90%;
+  }
+
+  .headBody h1{
+    overflow: hidden;
+  }
+
+  .optionLine p span{
+    position: relative
+  }
+
+  .legendBox{
+    width: 100%;
+    display: flex;
+    gap: 5rem;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .card{
+    margin-left: 2rem;
+    height: 100%;
+
+  }
+
+
+  .resultCard{
+    width: 90%;
+  }
+
+  .resultRow{
+    width: 100%;
+
+    gap: 2rem;
+  }
+  
+  .resultRow > * {
+    flex-basis: calc(90% - 1.5rem); 
+    max-width: calc(90% - 1.5rem); /
+  }
 }
