@@ -217,11 +217,18 @@ input[type=radio], input[type=checkbox] {
   padding: 2rem;
   align-items: center; 
   color: white;
+  height: 8rem
 }
+
 
 .footerImage img{
   width: 10rem;
-  margin-top: 1rem;
+  display: flexbox;
+}
+
+.footerParagraph{
+  position: absolute;
+  margin-top: 7rem;
 }
 
 @media(max-width: 600px){
